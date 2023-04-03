@@ -1,0 +1,45 @@
+body {
+    background-color:darkolivegreen;
+    text-align: center;
+    color: antiquewhite;
+    display: block;
+    margin-top: 8px;
+
+}
+
+header {
+
+margin-top: 50px;
+margin-bottom: 50px;
+font-size: 60px;
+
+}
+
+.container {
+    display: grid;
+    grid-template-columns: repeat(3, auto);
+    width: 300px;
+    height: 300px;
+    margin: 0 auto;
+
+}
+
+.box{
+    background-color:antiquewhite;
+    font-size: 45px;
+    text-align: center;
+    height: 100px;
+    width: 100px;
+    line-height: 50px;
+}
+
+#reset {
+    margin-top: 40px;
+    padding: 8px 15px 8px 15px;
+    font-family: 'Times New Roman', Times, serif;
+    font-size: 15px;
+    background-color: antiquewhite;
+    color: darkolivegreen;
+    border: 1px solid darkolivegreen;
+    border-radius: 1em;
+}
