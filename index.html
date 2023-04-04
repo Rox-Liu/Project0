@@ -5,25 +5,42 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="css/project0.css">
     <script src="js/jquery.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css">
     <script src="js/project0.js"></script>
     <title>Tic Tac Toe</title>
 </head>
 
 <body>
-    <header>Tic Tac Toe</header>
-    
-    <div class="container">
-        <button class="box" id="top-left"></button>
-        <button class="box" id="top-center"></button>
-        <button class="box" id="top-right"></button>
-        <button class="box" id="middle-left"></button>
-        <button class="box" id="middle-center"></button>
-        <button class="box" id="middle-right"></button>
-        <button class="box" id="bottom-left"></button>
-        <button class="box" id="bottom-center"></button>
-        <button class="box" id="bottom-right"></button>
-    </div>
-    <button id="reset">Restart game</button>
 
-</body>
+    <h1 class="animate__animated animate__flash">Tic Tac Toe</h1>
+    
+    <div id="options">
+        <h2>Player 1 select your symbol:</h2>
+        <button id="btn-x">X</button>
+        <button id="btn-o">O</button>
+    </div>
+
+    <div class="container">
+        <div class="row">
+            <button class="box" id="top-left"></button>
+            <button class="box" id="top-center"></button>
+            <button class="box" id="top-right"></button>
+        </div>
+        <div class="row">
+            <button class="box" id="middle-left"></button>
+            <button class="box" id="middle-center"></button>
+            <button class="box" id="middle-right"></button>
+        </div>
+        <div class="row">
+            <button class="box" id="bottom-left"></button>
+            <button class="box" id="bottom-center"></button>
+            <button class="box" id="bottom-right"></button>
+        </div>
+    </div>
+
+    <div>
+        <button id="reset">Restart Game</button>
+    </div>
+
+</body>     
 </html>

@@ -1,45 +1,118 @@
+
+
 body {
+
     background-color:darkolivegreen;
     text-align: center;
     color: antiquewhite;
     display: block;
     margin-top: 8px;
+    font-family: 'Times New Roman', Times, serif;
 
 }
 
-header {
+h1 {
+    margin-top: 50px;
+    margin-bottom: 50px;
+    font-size: 60px;
+}
 
-margin-top: 50px;
-margin-bottom: 50px;
-font-size: 60px;
 
+#options {
+    margin-top: 20px;
+    margin-bottom: 30px;
+    flex-direction: column;
+    align-items: center;
+}
+  
+#options button {
+
+    margin: 0 10px;
+    font-size: 1.5rem;
+    background-color: antiquewhite;
+
+}
+#btn-x, #btn-o {
+    width: 4.5%;
+    border: 0;
+}
+
+#btn-x:hover {
+    width: 5%;
+    background-color: darkgoldenrod;
+}
+
+#btn-o:hover {
+    width: 5%;
+    background-color: darkgoldenrod;
 }
 
 .container {
-    display: grid;
-    grid-template-columns: repeat(3, auto);
+    display: flex;
+    flex-direction: column;
     width: 300px;
     height: 300px;
     margin: 0 auto;
 
 }
+button:disabled {
+    color: black
+}
+.row {
 
-.box{
-    background-color:antiquewhite;
-    font-size: 45px;
-    text-align: center;
-    height: 100px;
-    width: 100px;
-    line-height: 50px;
+    display: flex;
+    flex-direction: row;
+
 }
 
+.box{
+
+    width: 100px;
+    height: 100px;
+    font-size: 5rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    background-color: antiquewhite;
+
+}
+
+.box:hover {
+    background-color: darkgoldenrod;
+}
+
+
 #reset {
+
     margin-top: 40px;
-    padding: 8px 15px 8px 15px;
+    padding: 6px 12px 6px 12px;
     font-family: 'Times New Roman', Times, serif;
-    font-size: 15px;
+    font-size: 14px;
     background-color: antiquewhite;
     color: darkolivegreen;
-    border: 1px solid darkolivegreen;
-    border-radius: 1em;
+    border-radius: 2em;
+
+}
+
+
+#reset:hover {
+
+    border-style:groove;
+    width: 12%
+    
+
+}
+
+
+.popup {
+    display: none;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 100%;
+    text-align: center;
+    background-color: #9098ff;
+    padding: 20px 0;
 }
