@@ -84,19 +84,6 @@ button:disabled {
 }
 
 
-/* aside {
-
-}
-
-#playerX {
-    display: grid;
-}
-
-#playerO {
-
-
-} */
-
 
 #reset {
 
@@ -117,18 +104,5 @@ button:disabled {
     width: 12%
     
 
-}
-
-
-.popup {
-    display: none;
-    position: fixed;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    width: 100%;
-    text-align: center;
-    background-color: #9098ff;
-    padding: 20px 0;
 }
 

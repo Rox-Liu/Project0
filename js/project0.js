@@ -25,7 +25,7 @@ $(document).ready(function () {
 
     boxes.on("click", function() {
         turnCounter += 1;
-        if (turnCounter % 2 !== 0) {
+        if (turnCounter % 2 === 0) {
           player2Choice;
         } else {
           player1Choice;
@@ -36,9 +36,9 @@ $(document).ready(function () {
 
     $('#top-left').on('click', function () {
         if (turnCounter % 2 !==0) {
-            $('#top-left').text(player2Choice);
-        } else {
             $('#top-left').text(player1Choice);
+        } else {
+            $('#top-left').text(player2Choice);
         }
         if ($('#top-left').text() !== "") {
             $('#top-left').attr('disabled', true);
@@ -49,9 +49,9 @@ $(document).ready(function () {
 
     $('#top-center').on('click', function () {
         if (turnCounter % 2 !==0) {
-            $('#top-center').text(player2Choice);
-        } else {
             $('#top-center').text(player1Choice);
+        } else {
+            $('#top-center').text(player2Choice);
         }
         if ($('#top-center').text() !== "") {
             $('#top-center').attr('disabled', true);
@@ -62,9 +62,9 @@ $(document).ready(function () {
 
     $('#top-right').on('click', function () {
         if (turnCounter % 2 !==0) {
-            $('#top-right').text(player2Choice);
-        } else {
             $('#top-right').text(player1Choice);
+        } else {
+            $('#top-right').text(player2Choice);
         }
         if ($('#top-right').text() !== "") {
             $('#top-right').attr('disabled', true);
@@ -75,9 +75,9 @@ $(document).ready(function () {
 
     $('#middle-left').on('click', function () {
         if (turnCounter % 2 !==0) {
-            $('#middle-left').text(player2Choice);
-        } else {
             $('#middle-left').text(player1Choice);
+        } else {
+            $('#middle-left').text(player2Choice);
         }
         if ($('#middle-left').text() !== "") {
             $('#middle-left').attr('disabled', true);
@@ -88,9 +88,9 @@ $(document).ready(function () {
 
     $('#middle-center').on('click', function () {
         if (turnCounter % 2 !==0) {
-            $('#middle-center').text(player2Choice);
-        } else {
             $('#middle-center').text(player1Choice);
+        } else {
+            $('#middle-center').text(player2Choice);
         }
         if ($('#middle-center').text() !== "") {
             $('#middle-center').attr('disabled', true);
@@ -101,9 +101,9 @@ $(document).ready(function () {
 
     $('#middle-right').on('click', function () {
         if (turnCounter % 2 !==0) {
-            $('#middle-right').text(player2Choice);
-        } else {
             $('#middle-right').text(player1Choice);
+        } else {
+            $('#middle-right').text(player2Choice);
         }
         if ($('#middle-right').text() !== "") {
             $('#middle-right').attr('disabled', true);
@@ -115,9 +115,9 @@ $(document).ready(function () {
 
     $('#bottom-left').on('click', function () {
         if (turnCounter % 2 !==0) {
-            $('#bottom-left').text(player2Choice);
-        } else {
             $('#bottom-left').text(player1Choice);
+        } else {
+            $('#bottom-left').text(player2Choice);
         }
         if ($('#bottom-left').text() !== "") {
             $('#bottom-left').attr('disabled', true);
@@ -129,9 +129,9 @@ $(document).ready(function () {
 
     $('#bottom-center').on('click', function () {
         if (turnCounter % 2 !==0) {
-            $('#bottom-center').text(player2Choice);
-        } else {
             $('#bottom-center').text(player1Choice);
+        } else {
+            $('#bottom-center').text(player2Choice);
         }
         if ($('#bottom-center').text() !== "") {
             $('#bottom-center').attr('disabled', true);
@@ -142,9 +142,9 @@ $(document).ready(function () {
 
     $('#bottom-right').on('click', function () {
         if (turnCounter % 2 !==0) {
-            $('#bottom-right').text(player2Choice);
-        } else {
             $('#bottom-right').text(player1Choice);
+        } else {
+            $('#bottom-right').text(player2Choice);
         }
         if ($('#bottom-right').text() !== "") {
             $('#bottom-right').attr('disabled', true);
@@ -188,57 +188,66 @@ $(document).ready(function () {
         let box7 = $('#bottom-left').text();
         let box8 = $('#bottom-center').text();
         let box9 = $('#bottom-right').text();
-
+    
+        let winnerFound = false;
+    
         if ((box1 === box2 && box2 === box3) && box1 !== "") {
             win(box1);
+            winnerFound = true;
         }
         if ((box4 === box5 && box5 === box6) && box4 !== "") {
             win(box4);
+            winnerFound = true;
         }
         if ((box7 === box8 && box8 === box9) && box7 !== "") {
             win(box7);
+            winnerFound = true;
         }
-
+    
         if ((box1 === box4 && box4 === box7) && box7 !== "") {
             win(box7);
+            winnerFound = true;
         }
         if ((box2 === box5 && box5 === box8) && box5 !== "") {
             win(box5);
+            winnerFound = true;
         }
-
+    
         if ((box3 === box6 && box6 === box9) && box6 !== "") {
             win(box6);
+            winnerFound = true;
         }
-
+    
         if ((box1 === box5 && box5 === box9) && box5 !== "") {
             win(box5);
+            winnerFound = true;
         }
-
+    
         if ((box3 === box5 && box5 === box7) && box7 !== "") {
             win(box7);
+            winnerFound = true;
         }
-
-        if (box1 !== "" && box2 !== "" && box3 !== "" && box4 !== "" && box5 !== "" && box6 !== "" && box7 !== "" && box8 !== "" && box9 !== "") {
+    
+        if (!winnerFound && box1 !== "" && box2 !== "" && box3 !== "" && box4 !== "" && box5 !== "" && box6 !== "" && box7 !== "" && box8 !== "" && box9 !== "") {
             draw();
         }
     }
 
+
     function win(winner) {
         if (winner === player1Choice) {
-          player1GameCounter += 1
-          $('#player-1-score').text(player1GameCounter)
+            player1GameCounter += 1
+            $('#player-1-score').text(player1GameCounter)
         } else {
-          player2GameCounter += 1
-          $('#player-2-score').text(player2GameCounter)
+            player2GameCounter += 1
+            $('#player-2-score').text(player2GameCounter)
         }
-    
-    alert(`${winner} win!`);
+        alert(`${winner} win!`);
     }
 
     function draw() {
-     
-        alert("It is a draw!");
-        
+        alert('it is draw');
     }
-});
 
+
+});
