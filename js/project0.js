@@ -3,6 +3,9 @@ $(document).ready(function () {
     let player2Choice = "";
     let boxes = $(".box");
     let turnCounter = 0;
+    let player1GameCounter = 0;
+    let player2GameCounter = 0;
+
 
     $("#btn-x").on("click", function() {
         player1Choice = "X";
@@ -19,6 +22,16 @@ $(document).ready(function () {
         $("#btn-x").attr("disabled", true);
         $("#btn-o").attr("disabled", true);
     });
+
+    boxes.on("click", function() {
+        turnCounter += 1;
+        if (turnCounter % 2 !== 0) {
+          player2Choice;
+        } else {
+          player1Choice;
+        }
+      });
+
 
 
     $('#top-left').on('click', function () {
@@ -141,22 +154,27 @@ $(document).ready(function () {
 
     
     
-    boxes.on("click", function() {
-        turnCounter += 1;
-        if (turnCounter % 2 ===0) {
-            playerXChoice = true;
-            playerOChoice = false; 
-        } else {
-            playerOChoice = true;
-            playerXChoice = false;
-        }
-    });
-    
+    // boxes.on("click", function() {
+    //     turnCounter += 1;
+    //     if (turnCounter % 2 ===0) {
+    //         player1Choice = true;
+    //         player2Choice = false; 
+    //     } else {
+    //         player2Choice = true;
+    //         player1Choice = false;
+    //     }
+    // });
 
     $("#reset").on("click", function() {
-        boxes.text("");
         $("#btn-x").removeAttr("disabled");
         $("#btn-o").removeAttr("disabled");
+        $("#btn-x").css("opacity", 1);
+        $("#btn-o").css("opacity", 1);
+        boxes.removeAttr('disabled')
+        turnCounter = 0;
+        player1Choice = ''
+        player2Choice = ''
+        boxes.text("");
     });
 
 
@@ -206,12 +224,21 @@ $(document).ready(function () {
     }
 
     function win(winner) {
-        alert(`${winner} win!`);
-
+        if (winner === player1Choice) {
+          player1GameCounter += 1
+          $('#player-1-score').text(player1GameCounter)
+        } else {
+          player2GameCounter += 1
+          $('#player-2-score').text(player2GameCounter)
+        }
+    
+    alert(`${winner} win!`);
     }
 
     function draw() {
+     
         alert("It is a draw!");
+        
     }
 });
 

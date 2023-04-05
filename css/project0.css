@@ -55,6 +55,7 @@ h1 {
     margin: 0 auto;
 
 }
+
 button:disabled {
     color: black
 }
@@ -81,6 +82,20 @@ button:disabled {
 .box:hover {
     background-color: darkgoldenrod;
 }
+
+
+/* aside {
+
+}
+
+#playerX {
+    display: grid;
+}
+
+#playerO {
+
+
+} */
 
 
 #reset {
@@ -116,3 +131,4 @@ button:disabled {
     background-color: #9098ff;
     padding: 20px 0;
 }
+

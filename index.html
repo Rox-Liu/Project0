@@ -11,36 +11,59 @@
 </head>
 
 <body>
+    <header>
+        <h1 class="animate__animated animate__flash">Tic Tac Toe</h1>
+    </header>
 
-    <h1 class="animate__animated animate__flash">Tic Tac Toe</h1>
+    <main>
     
-    <div id="options">
-        <h2>Player 1 select your symbol:</h2>
-        <button id="btn-x">X</button>
-        <button id="btn-o">O</button>
-    </div>
+        <section id="options">
+            <h2>Player 1 select your symbol:</h2>
+            <button id="btn-x">X</button>
+            <button id="btn-o">O</button>
+        </section>
 
-    <div class="container">
-        <div class="row">
-            <button class="box" id="top-left"></button>
-            <button class="box" id="top-center"></button>
-            <button class="box" id="top-right"></button>
-        </div>
-        <div class="row">
-            <button class="box" id="middle-left"></button>
-            <button class="box" id="middle-center"></button>
-            <button class="box" id="middle-right"></button>
-        </div>
-        <div class="row">
-            <button class="box" id="bottom-left"></button>
-            <button class="box" id="bottom-center"></button>
-            <button class="box" id="bottom-right"></button>
-        </div>
-    </div>
+        
+        <aside>
+            <div id="playerX">
+                <h3>player1 score:</h3>
+                <p id="player-1-score"></p>
+            </div>
 
-    <div>
-        <button id="reset">Restart Game</button>
-    </div>
+            <div id="playerO">
+                <h3>player2 score:</h3>
+                <p id="player-2-score"></p>
+            </div>
+        </aside>
 
+        <section class="container">
+
+
+            <section>
+                <div class="row">
+                    <button class="box" id="top-left"></button>
+                    <button class="box" id="top-center"></button>
+                    <button class="box" id="top-right"></button>
+                </div>
+                <div class="row">
+                    <button class="box" id="middle-left"></button>
+                    <button class="box" id="middle-center"></button>
+                    <button class="box" id="middle-right"></button>
+                </div>
+                <div class="row">
+                    <button class="box" id="bottom-left"></button>
+                    <button class="box" id="bottom-center"></button>
+                    <button class="box" id="bottom-right"></button>
+                </div>
+            </section>
+
+
+        </section> 
+
+        <section>
+            <button id="reset">Restart Game</button>
+        </section>
+
+    </main>
 </body>     
 </html>
