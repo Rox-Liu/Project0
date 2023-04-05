@@ -12,56 +12,56 @@
 
 <body>
     <header>
-        <h1 class="animate__animated animate__flash">Tic Tac Toe</h1>
+        <h1 class="animate__animated animate__bounceIn">Tic Tac Toe</h1>
     </header>
 
     <main>
     
         <section id="options">
             <h2>Player 1 select your symbol:</h2>
-            <button id="btn-x">X</button>
-            <button id="btn-o">O</button>
+            <button class="button-74" id="btn-x" role="button">X</button>
+            <button class="button-74" id="btn-o" role="button">O</button>
         </section>
 
-        
-        <aside>
+        <div class="board">
             <div id="playerX">
-                <h3>player1 score:</h3>
-                <p id="player-1-score"></p>
+                <h3 class="animate__animated animate__flipInX">player1 score:</h3>
+                <p id="player-1-score" class="animate__animated"></p>
             </div>
+
+            <section class="container">
+                <section>
+                    <div class="row">
+                        <button class="box" id="top-left"></button>
+                        <button class="box" id="top-center"></button>
+                        <button class="box" id="top-right"></button>
+                    </div>
+                    <div class="row">
+                        <button class="box" id="middle-left"></button>
+                        <button class="box" id="middle-center"></button>
+                        <button class="box" id="middle-right"></button>
+                    </div>
+                    <div class="row">
+                        <button class="box" id="bottom-left"></button>
+                        <button class="box" id="bottom-center"></button>
+                        <button class="box" id="bottom-right"></button>
+                    </div>
+                </section>
+            </section> 
 
             <div id="playerO">
-                <h3>player2 score:</h3>
-                <p id="player-2-score"></p>
+                <h3 class="animate__animated animate__flipInX">player2 score:</h3>
+                <p id="player-2-score" class="animate__animated"></p>
             </div>
-        </aside>
+        </div>
 
-        <section class="container">
-
-
-            <section>
-                <div class="row">
-                    <button class="box" id="top-left"></button>
-                    <button class="box" id="top-center"></button>
-                    <button class="box" id="top-right"></button>
-                </div>
-                <div class="row">
-                    <button class="box" id="middle-left"></button>
-                    <button class="box" id="middle-center"></button>
-                    <button class="box" id="middle-right"></button>
-                </div>
-                <div class="row">
-                    <button class="box" id="bottom-left"></button>
-                    <button class="box" id="bottom-center"></button>
-                    <button class="box" id="bottom-right"></button>
-                </div>
-            </section>
-
-
-        </section> 
+        <section class="won-banner">
+            <div class="animate__animated" id="result"></div>
+            <button class="button-74" id="reset2" role="button">Play again</button>
+        </section>
 
         <section>
-            <button id="reset">Restart Game</button>
+            <button class="button-74" id="reset" role="button">Restart Game</button>
         </section>
 
     </main>

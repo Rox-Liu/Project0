@@ -6,13 +6,13 @@ $(document).ready(function () {
     let player1GameCounter = 0;
     let player2GameCounter = 0;
 
-
     $("#btn-x").on("click", function() {
         player1Choice = "X";
         player2Choice = "O";
         $("#btn-x").css("opacity", 0.5);
         $("#btn-x").attr("disabled", true);
         $("#btn-o").attr("disabled", true);
+        turnCounter = 0;
     });
 
     $("#btn-o").on("click", function() {
@@ -21,6 +21,7 @@ $(document).ready(function () {
         $("#btn-o").css("opacity", 0.5);
         $("#btn-x").attr("disabled", true);
         $("#btn-o").attr("disabled", true);
+        turnCounter = 0;
     });
 
     boxes.on("click", function() {
@@ -30,142 +31,42 @@ $(document).ready(function () {
         } else {
           player1Choice;
         }
-      });
-
-
-
-    $('#top-left').on('click', function () {
-        if (turnCounter % 2 !==0) {
-            $('#top-left').text(player1Choice);
-        } else {
-            $('#top-left').text(player2Choice);
-        }
-        if ($('#top-left').text() !== "") {
-            $('#top-left').attr('disabled', true);
-        }
-        checkForWinner();
-    }); 
-
-
-    $('#top-center').on('click', function () {
-        if (turnCounter % 2 !==0) {
-            $('#top-center').text(player1Choice);
-        } else {
-            $('#top-center').text(player2Choice);
-        }
-        if ($('#top-center').text() !== "") {
-            $('#top-center').attr('disabled', true);
-        }
-        checkForWinner();
     });
 
+    const oneClick = function(boxName) {
+        $(boxName).on('click', function () {
+            if (turnCounter % 2 !==0) {
+                $(boxName).text(player1Choice);
+            } else {
+                $(boxName).text(player2Choice);
+            }
+            if ($(boxName).text() !== "") {
+                $(boxName).attr('disabled', true);
+            }
+            checkForWinner();
+        })
+    };
 
-    $('#top-right').on('click', function () {
-        if (turnCounter % 2 !==0) {
-            $('#top-right').text(player1Choice);
-        } else {
-            $('#top-right').text(player2Choice);
-        }
-        if ($('#top-right').text() !== "") {
-            $('#top-right').attr('disabled', true);
-        }
-        checkForWinner();
-    });
+    oneClick('#top-left');
+    oneClick('#top-center');
+    oneClick('#top-right');
+    oneClick('#middle-left');
+    oneClick('#middle-center');
+    oneClick('#middle-right');
+    oneClick('#bottom-left');
+    oneClick('#bottom-center');
+    oneClick('#bottom-right');
 
-
-    $('#middle-left').on('click', function () {
-        if (turnCounter % 2 !==0) {
-            $('#middle-left').text(player1Choice);
-        } else {
-            $('#middle-left').text(player2Choice);
-        }
-        if ($('#middle-left').text() !== "") {
-            $('#middle-left').attr('disabled', true);
-        }
-        checkForWinner();
-    });
-
-
-    $('#middle-center').on('click', function () {
-        if (turnCounter % 2 !==0) {
-            $('#middle-center').text(player1Choice);
-        } else {
-            $('#middle-center').text(player2Choice);
-        }
-        if ($('#middle-center').text() !== "") {
-            $('#middle-center').attr('disabled', true);
-        }
-        checkForWinner();
-    });
-
-
-    $('#middle-right').on('click', function () {
-        if (turnCounter % 2 !==0) {
-            $('#middle-right').text(player1Choice);
-        } else {
-            $('#middle-right').text(player2Choice);
-        }
-        if ($('#middle-right').text() !== "") {
-            $('#middle-right').attr('disabled', true);
-        }
-        checkForWinner();
-    });
-
-
-
-    $('#bottom-left').on('click', function () {
-        if (turnCounter % 2 !==0) {
-            $('#bottom-left').text(player1Choice);
-        } else {
-            $('#bottom-left').text(player2Choice);
-        }
-        if ($('#bottom-left').text() !== "") {
-            $('#bottom-left').attr('disabled', true);
-        }
-        checkForWinner();
-    });
-
-
-
-    $('#bottom-center').on('click', function () {
-        if (turnCounter % 2 !==0) {
-            $('#bottom-center').text(player1Choice);
-        } else {
-            $('#bottom-center').text(player2Choice);
-        }
-        if ($('#bottom-center').text() !== "") {
-            $('#bottom-center').attr('disabled', true);
-        }
-        checkForWinner();
-    });
-
-
-    $('#bottom-right').on('click', function () {
-        if (turnCounter % 2 !==0) {
-            $('#bottom-right').text(player1Choice);
-        } else {
-            $('#bottom-right').text(player2Choice);
-        }
-        if ($('#bottom-right').text() !== "") {
-            $('#bottom-right').attr('disabled', true);
-        }
-        checkForWinner();
-    });
-
-    
-    
-    // boxes.on("click", function() {
-    //     turnCounter += 1;
-    //     if (turnCounter % 2 ===0) {
-    //         player1Choice = true;
-    //         player2Choice = false; 
-    //     } else {
-    //         player2Choice = true;
-    //         player1Choice = false;
-    //     }
-    // });
 
     $("#reset").on("click", function() {
+        reset();
+    });
+
+    $("#reset2").on("click", function() {
+        reset();
+    });
+
+    function reset() {
         $("#btn-x").removeAttr("disabled");
         $("#btn-o").removeAttr("disabled");
         $("#btn-x").css("opacity", 1);
@@ -175,7 +76,12 @@ $(document).ready(function () {
         player1Choice = ''
         player2Choice = ''
         boxes.text("");
-    });
+        $('#result').text("");
+        $('#result').removeClass("animate__bounce");
+        $('#player-1-score').removeClass('animate__flipInX');
+        $('#player-2-score').removeClass('animate__flipInX');
+        $(".won-banner").removeClass("appear");
+    };
 
 
     function checkForWinner() {
@@ -231,23 +137,30 @@ $(document).ready(function () {
         if (!winnerFound && box1 !== "" && box2 !== "" && box3 !== "" && box4 !== "" && box5 !== "" && box6 !== "" && box7 !== "" && box8 !== "" && box9 !== "") {
             draw();
         }
-    }
+    };
 
 
     function win(winner) {
         if (winner === player1Choice) {
             player1GameCounter += 1
-            $('#player-1-score').text(player1GameCounter)
+            $('#player-1-score').text(player1GameCounter);
+            $('#player-1-score').addClass('animate__flipInX');
         } else {
             player2GameCounter += 1
-            $('#player-2-score').text(player2GameCounter)
+            $('#player-2-score').text(player2GameCounter);
+            $('#player-2-score').addClass('animate__flipInX');
         }
-        alert(`${winner} win!`);
-    }
+        $('#result').text(`${winner} win!`);
+        $('#result').addClass('animate__bounce');
+        boxes.attr('disabled', true);
+        $(".won-banner").addClass("appear");
+    };
 
     function draw() {
-        alert('it is draw');
-    }
+        $('#result').text('It is a tie!');
+        $('#result').addClass('animate__bounce');
+        $(".won-banner").addClass("appear");
+    };
 
 
 });
