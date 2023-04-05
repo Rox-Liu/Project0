@@ -29,7 +29,7 @@ This project is a simple version of the game 'Tic Tac Toe' by using classic colo
 * It will keep track of multiple game rounds for you.
 
 ## Screenshots
-
+![a screenshot](https://github.com/Rox-Liu/Project0/blob/main/Screen%20Shot.png)
 
 
 ## Project Status
