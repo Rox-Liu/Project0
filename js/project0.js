@@ -27,9 +27,9 @@ $(document).ready(function () {
     boxes.on("click", function() {
         turnCounter += 1;
         if (turnCounter % 2 === 0) {
-          player2Choice;
+            player2Choice;
         } else {
-          player1Choice;
+            player1Choice;
         }
     });
 
@@ -71,10 +71,10 @@ $(document).ready(function () {
         $("#btn-o").removeAttr("disabled");
         $("#btn-x").css("opacity", 1);
         $("#btn-o").css("opacity", 1);
-        boxes.removeAttr('disabled')
+        boxes.removeAttr('disabled');
         turnCounter = 0;
-        player1Choice = ''
-        player2Choice = ''
+        player1Choice = '';
+        player2Choice = '';
         boxes.text("");
         $('#result').text("");
         $('#result').removeClass("animate__bounce");
@@ -82,7 +82,6 @@ $(document).ready(function () {
         $('#player-2-score').removeClass('animate__flipInX');
         $(".won-banner").removeClass("appear");
     };
-
 
     function checkForWinner() {
         let box1 = $('#top-left').text();
@@ -139,7 +138,6 @@ $(document).ready(function () {
         }
     };
 
-
     function win(winner) {
         if (winner === player1Choice) {
             player1GameCounter += 1
@@ -161,6 +159,5 @@ $(document).ready(function () {
         $('#result').addClass('animate__bounce');
         $(".won-banner").addClass("appear");
     };
-
 
 });

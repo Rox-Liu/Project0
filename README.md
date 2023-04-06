@@ -17,6 +17,7 @@ This project is a simple version of the game 'Tic Tac Toe' by using classic colo
 
 ## Technologies Used
 * JavaScript1.7
+* HTML
 * CSS
 * jQuery JavaScript Library v3.6.4
 * Animate.css
@@ -33,7 +34,7 @@ This project is a simple version of the game 'Tic Tac Toe' by using classic colo
 
 
 ## Project Status
-This project still in progress.
+This project is still in progress.
 
 ## Room for Improvement
 Room for improvement:
@@ -42,7 +43,7 @@ Room for improvement:
 
 ## Acknowledgements
 This project was inspired by Joel.
-Many thanks to Joel, Mark, Tina, CJ and of course my whole classmates.
+Many thanks to Joel, Mark, Tina, CJ and of course all my lovely classmates!
 
 ## Contact
 Feel free to [contact me](https://github.com/Rox-Liu)!
